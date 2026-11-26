@@ -13,7 +13,7 @@ import {
   FaPlus
 } from "react-icons/fa";
 
-function Dashboard() {
+function Dashboard({ onOpenExpenses }) {
   const transactions = [
     { name: "Salary", category: "Income", date: "Nov 25, 2026", amount: 85000, type: "income" },
     { name: "Food & Groceries", category: "Food", date: "Nov 24, 2026", amount: 4500, type: "expense" },
@@ -29,7 +29,13 @@ function Dashboard() {
 
         <nav>
           <a className="nav-link active"><FaHome /> Dashboard</a>
-          <a className="nav-link"><FaExchangeAlt /> Transactions</a>
+          <button
+  type="button"
+  className="nav-link"
+  onClick={onOpenExpenses}
+>
+  <FaExchangeAlt /> Expenses
+</button>
           <a className="nav-link"><FaPiggyBank /> Budgets</a>
           <a className="nav-link"><FaChartPie /> Analytics</a>
           <a className="nav-link"><FaFileAlt /> Reports</a>
