@@ -364,3 +364,19 @@ body {
   cursor: pointer;
   background: transparent;
 }
+
+
+.income-add-button,
+.income-save-button {
+  background: #16a34a;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.income-amount {
+  color: #16a34a;
+}

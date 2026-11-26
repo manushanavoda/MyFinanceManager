@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import Expenses from "./pages/Expenses";
+import Income from "./pages/Income";
 import "./App.css";
 
 function App() {
@@ -9,14 +10,19 @@ function App() {
 
   return (
     <>
-      {currentPage === "dashboard" ? (
+      {currentPage === "dashboard" && (
         <Dashboard
           onOpenExpenses={() => setCurrentPage("expenses")}
+          onOpenIncome={() => setCurrentPage("income")}
         />
-      ) : (
-        <Expenses
-          onBack={() => setCurrentPage("dashboard")}
-        />
+      )}
+
+      {currentPage === "expenses" && (
+        <Expenses onBack={() => setCurrentPage("dashboard")} />
+      )}
+
+      {currentPage === "income" && (
+        <Income onBack={() => setCurrentPage("dashboard")} />
       )}
     </>
   );
